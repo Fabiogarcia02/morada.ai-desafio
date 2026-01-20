@@ -7,6 +7,8 @@ function App() {
   const [valor, setValor] = useState("");
   const [resultado, setResultado] = useState<ResultadoSaque | null>(null);
 
+  const API_URL = import.meta.env.VITE_API_URL || "http://localhost:3333";
+
   async function handleSaque() {
     try {
       if (!valor || Number(valor) <= 0) {
@@ -15,7 +17,7 @@ function App() {
         return;
       }
 
-      const res = await fetch("http://localhost:3333/caixa/saque", {
+      const res = await fetch(`${API_URL}/caixa/saque`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ valor: Number(valor) }),
