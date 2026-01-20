@@ -1,4 +1,5 @@
 import { useState } from "react";
+import axios from "axios";
 import "./App.css";
 
 type ResultadoSaque = { [nota: number]: number };
@@ -17,24 +18,16 @@ function App() {
         return;
       }
 
-      const res = await fetch(`${API_URL}/caixa/saque`, {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ valor: Number(valor) }),
-      });
+      const res = await axios.post(`${API_URL}/caixa/saque`, { valor: Number(valor) });
 
-      const data = await res.json();
-
-      if (!res.ok) {
-        alert(data.error || "Erro ao sacar");
-        setResultado(null);
-        return;
-      }
-
-      setResultado(data);
+      setResultado(res.data);
       alert("Saque realizado com sucesso!");
     } catch (e: any) {
-      alert(e.message || "Erro inesperado");
+      if (e.response && e.response.data && e.response.data.error) {
+        alert(e.response.data.error);
+      } else {
+        alert(e.message || "Erro inesperado");
+      }
       setResultado(null);
     }
   }
