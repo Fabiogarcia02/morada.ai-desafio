@@ -1,10 +1,8 @@
 
 
-# 🏦 Desafio Morada – Caixa Eletrônico Fullstack
+# 🏦 Desafio Morada – Caixa Eletrônico 
 
-Este projeto simula o funcionamento de um **Caixa Eletrônico**. O usuário informa o valor que deseja sacar e o sistema calcula a menor quantidade de notas possível, utilizando cédulas de R$ 100, 50, 20, 10, 5 e 2.
 
----
 
 ## 🚀 Funcionalidades
 
