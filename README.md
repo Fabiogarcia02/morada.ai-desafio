@@ -1,8 +1,4 @@
-Este é um excelente projeto para demonstrar habilidades de lógica e organização de código. Para deixar o seu **README.md** "bonitinho" e profissional, estruturei o conteúdo com ícones, seções claras, blocos de código bem definidos e uma visualização da arquitetura.
 
-Aqui está o modelo pronto para você copiar e colar:
-
----
 
 # 🏦 Desafio Morada – Caixa Eletrônico Fullstack
 
