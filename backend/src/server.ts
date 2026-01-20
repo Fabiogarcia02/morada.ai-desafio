@@ -1,6 +1,5 @@
 import express from "express";
 import cors from "cors";
-import path from "path";
 import routes from "./routes/routes";
 
 const app = express();
@@ -11,11 +10,8 @@ app.use(express.json());
 
 app.use("/caixa", routes);
 
-const frontendPath = path.join(__dirname, "../../frontend/build");
-app.use(express.static(frontendPath));
-
-app.use((req, res) => {
-  res.sendFile(path.join(frontendPath, "index.html"));
+app.get("/", (req, res) => {
+  res.send("API do backend rodando!");
 });
 
 app.listen(PORT, () => console.log(`Servidor rodando na porta ${PORT}`));
