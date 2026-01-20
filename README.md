@@ -1,119 +1,131 @@
+Este é um excelente projeto para demonstrar habilidades de lógica e organização de código. Para deixar o seu **README.md** "bonitinho" e profissional, estruturei o conteúdo com ícones, seções claras, blocos de código bem definidos e uma visualização da arquitetura.
 
-🏦 Desafio Morada – Caixa Eletrônico Fullstack
-Descrição do projeto
+Aqui está o modelo pronto para você copiar e colar:
 
-Este projeto é um Caixa Eletrônico desenvolvido em fullstack:
+---
 
-Frontend: React + Vite + TypeScript
+# 🏦 Desafio Morada – Caixa Eletrônico Fullstack
 
-Backend: Node.js + Express + TypeScript
+Este projeto simula o funcionamento de um **Caixa Eletrônico**. O usuário informa o valor que deseja sacar e o sistema calcula a menor quantidade de notas possível, utilizando cédulas de R$ 100, 50, 20, 10, 5 e 2.
 
-Funcionalidades:
+---
 
-Recebe um valor de saque pelo frontend (ou via Postman)
+## 🚀 Funcionalidades
 
-Calcula a quantidade de notas necessárias para atender o valor
+* ✅ **Cálculo Otimizado:** Algoritmo que prioriza as maiores notas para o saque.
+* ✅ **Validação de Entradas:** Impede saques de valores negativos, zero ou quantias impossíveis de serem atendidas com as notas disponíveis (ex: R$ 1,00 ou R$ 3,00).
+* ✅ **Interface Responsiva:** Frontend simples e intuitivo desenvolvido com React e Vite.
+* ✅ **API REST:** Backend desacoplado que pode ser testado via Postman ou Insomnia.
 
-Valida entradas inválidas (valores negativos, 0 ou impossíveis de sacar)
+---
 
-Retorna o resultado no frontend ou via JSON
+## 📂 Estrutura do Projeto
 
-Estrutura do projeto
+```text
 morada-desafio/
 ├─ backend/
 │  ├─ src/
-│  │  ├─ server.ts          # Servidor Express
+│  │  ├─ server.ts          # Inicialização do Express
 │  │  ├─ routes/
-│  │  │  └─ routes.ts       # Rota POST /caixa/saque
+│  │  │  └─ routes.ts       # Definição dos endpoints
 │  │  └─ services/
-│  │     └─ Caixaeletronico.ts  # Lógica do saque
-│  ├─ package.json
-│  └─ tsconfig.json
+│  │     └─ Caixaeletronico.ts # Lógica de negócio (Cálculo das notas)
 ├─ frontend/
 │  ├─ src/
-│  │  ├─ App.tsx            # Componente principal
-│  │  ├─ App.css            # Estilos
-│  │  └─ main.tsx           # Entrada do React
-│  ├─ package.json
-│  ├─ tsconfig.json
-│  └─ vite.config.ts
-├─ .gitignore
+│  │  ├─ App.tsx            # Interface do usuário
+│  │  ├─ App.css            # Estilização
+│  │  └─ main.tsx           # Entry point do React
 └─ README.md
 
-Rodando o projeto localmente
-1. Backend
+```
+
+---
+
+## 🛠️ Como rodar o projeto
+
+### 1. Pré-requisitos
+
+* Node.js instalado (versão 16 ou superior)
+* Gerenciador de pacotes (NPM ou Yarn)
+
+### 2. Configurando o Backend
+
+```bash
 cd backend
 npm install
 npm run dev
 
+```
 
-O servidor vai rodar em: http://localhost:3333
+> O servidor iniciará em: `http://localhost:3333`
 
-Rotas disponíveis:
+### 3. Configurando o Frontend
 
-GET / → Teste simples (retorna "Servidor rodando!")
-
-POST /caixa/saque → Recebe { "valor": number } e retorna JSON com notas
-
-2. Frontend
+```bash
 cd frontend
 npm install
 npm run dev
 
+```
 
-O frontend roda normalmente em: http://localhost:5173
+> O frontend iniciará em: `http://localhost:5173`
 
-Interface simples para digitar o valor do saque e ver o resultado
+---
 
-Testando com Postman
+## 📡 API Endpoints
 
-Abra o Postman
+### **POST** `/caixa/saque`
 
-Crie uma requisição POST:
+Envia um valor e recebe a distribuição das notas.
 
-URL: http://localhost:3333/caixa/saque
-Headers: Content-Type → application/json
-Body (raw → JSON):
+**Corpo da Requisição (JSON):**
+
+```json
 {
-  "valor": 150
+  "valor": 180
 }
 
+```
 
-Respostas esperadas:
+**Resposta de Sucesso (200):**
 
-Valor válido:
-
+```json
 {
   "100": 1,
   "50": 1,
-  "20": 0,
-  "10": 0,
+  "20": 1,
+  "10": 1,
   "5": 0,
   "2": 0
 }
 
+```
 
-Valor impossível de sacar (ex: 1):
+**Resposta de Erro (400):**
 
+```json
 {
   "error": "Não é possível sacar esse valor"
 }
 
+```
 
-Valor negativo ou 0:
+---
 
-{
-  "error": "Digite um valor inteiro positivo"
-}
+## 🧪 Testando com Postman
 
-Tecnologias utilizadas
+1. Abra o **Postman**.
+2. Crie uma nova requisição do tipo **POST**.
+3. Insira a URL: `http://localhost:3333/caixa/saque`.
+4. Em **Headers**, certifique-se que `Content-Type` é `application/json`.
+5. Em **Body**, selecione `raw` e escolha `JSON`. Digite o valor desejado.
 
-Frontend: React, Vite, TypeScript, CSS
+---
 
-Backend: Node.js, Express, TypeScript
+## 💻 Tecnologias Utilizadas
 
-Controle de versão: Git
+* **Frontend:** React, Vite, TypeScript, CSS3.
+* **Backend:** Node.js, Express, TypeScript.
+* **Versionamento:** Git.
 
-Observações
 
-Projeto está configurado para rodar frontend e backend juntos em pastas separadas
