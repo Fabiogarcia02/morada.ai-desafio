@@ -47,8 +47,16 @@ morada-desafio/
 ```bash
 cd backend
 npm install
-npm run dev
+# Instalar dependências de produção e tipos
+npm install express cors
+npm install -D typescript ts-node-dev @types/express @types/node @types/cors
 
+# Inicializar o TypeScript (caso ainda não tenha o tsconfig.json)
+npx tsc --init
+
+# Iniciar o servidor em modo de desenvolvimento
+npm run dev
+  
 ```
 
 > O servidor iniciará em: `http://localhost:3333`
@@ -58,6 +66,8 @@ npm run dev
 ```bash
 cd frontend
 npm install
+npm create vite@latest . -- --template react-ts
+npm install react-router-dom
 npm run dev
 
 ```
