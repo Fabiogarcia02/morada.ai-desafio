@@ -126,12 +126,18 @@ Envia um valor e recebe a distribuição das notas.
 5. Em **Body**, selecione `raw` e escolha `JSON`. Digite o valor desejado.
 
 ---
-## Testes
+## Testes/Postman
 <img width="990" height="467" alt="Captura de tela 2026-01-19 205642" src="https://github.com/user-attachments/assets/aaebead1-fe20-4460-a975-875cde93dcc7" />
 <img width="1365" height="726" alt="Captura de tela 2026-01-19 205620" src="https://github.com/user-attachments/assets/606042af-84a9-4957-a88f-c3d0003e95e4" />
 <img width="1365" height="765" alt="Captura de tela 2026-01-19 205546" src="https://github.com/user-attachments/assets/8d1ea7b5-beec-4414-9e71-893698fffbeb" />
 <img width="1361" height="722" alt="Captura de tela 2026-01-19 204904" src="https://github.com/user-attachments/assets/c9872810-79ec-4d87-9dbf-67e69b8bae3a" />
 <img width="1352" height="679" alt="Captura de tela 2026-01-19 204013" src="https://github.com/user-attachments/assets/3530d793-4c45-4320-a945-1fec4a7bfd03" />
+
+## Testes/Jest
+<img width="740" height="458" alt="Captura de tela 2026-01-21 192503" src="https://github.com/user-attachments/assets/ba0b8d1b-055a-4b85-b7f5-2cc498d695e3" />
+<img width="562" height="223" alt="Captura de tela 2026-01-21 192454" src="https://github.com/user-attachments/assets/198744ab-6ac5-4c5e-b428-e14fcb10584a" />
+
+
 
 
 
